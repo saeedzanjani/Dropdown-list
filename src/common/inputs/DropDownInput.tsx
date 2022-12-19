@@ -92,10 +92,12 @@ const useStyles = createUseStyles({
     margin: 0,
     display: "flex",
     flexFlow: "row",
+    borderRadius: "10px",
     justifyContent: "space-between",
     alignContent: "center",
     '&:hover': {
-      cursor: "pointer"
+      cursor: "pointer",
+      backgroundColor: "#f6f6f7",
     }
   },
   selectedDropItem: {
@@ -115,9 +117,6 @@ const useStyles = createUseStyles({
     color: "#91A5BE",
     transform: "rotate(0deg)",
     transition: "all .2s ease-in-out",
-    '&.open': {
-      transform: "rotate(90deg)",
-    }
   },
   openIcon: {
     transform: "rotate(180deg)",
