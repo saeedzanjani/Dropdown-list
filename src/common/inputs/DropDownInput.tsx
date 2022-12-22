@@ -21,10 +21,10 @@ const DropDownInput = ({ data }: DropDownProps) => {
   }
   
   return (
-    <div className={classes.dropdown}>
+    // <div className={classes.root}>
+      <div className={classes.dropdown}>
       <div className={classes.dropdownHeader} onClick={toggleDropdown}>
         {!isNaN(selectedItem) ? items?.find(item => item?.id === +selectedItem)?.label : "Select your Item"}
-        {/* <i className={`${classes.icon} ${open && classes.openIcon}`}></i> */}
         <img src="./icons/down-arrow-svgrepo-com.svg" width="15" alt="arrow" className={`${classes.icon} ${open && classes.openIcon}`} />
       </div>
       <div className={`${classes.dropdownBody} ${open && classes.openDropdownBody}`}>
@@ -39,6 +39,7 @@ const DropDownInput = ({ data }: DropDownProps) => {
         ))}
       </div>
     </div>
+    // </div>
   )
 }
 
@@ -48,12 +49,22 @@ const useStyles = createUseStyles({
   root: {
     width: '100%',
     height: '100vh',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto"
   },
   dropdown: {
     width: "30%",
     margin: "100px auto",
     borderRadius: "15px",
-    textAlign: 'left'
+    textAlign: 'left',
+    '@media (max-width: 700px)': {
+      width: "70%",
+      display: "flex",
+      justifyContent: "center",
+      flexWrap: "wrap"
+    }
   },
   dropdownHeader: {
     width: "100%",

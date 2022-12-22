@@ -31,7 +31,10 @@ const useStyles = createUseStyles({
     height: "50px",
     display: "flex",
     flexFlow: "row",
-    alignItems: "center"
+    alignItems: "center",
+    '@media (max-width: 700px)': {
+      width: "70%",
+    }
   },
   inputItem: {
     width: "80%",
